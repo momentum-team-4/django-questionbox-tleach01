@@ -1,0 +1,29 @@
+* {
+    font-family: 'Bree Serif', serif;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.navigation{
+    background-color: rgb(255, 255, 255);
+    border: rgb(50, 100, 142) 8px solid;
+    border-radius: 5px;
+}
+
+.nav {
+    list-style-type: none;
+    display: inline-flex;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(91, 178, 249) ;
+    color: rgb(3, 5, 7);
+    box-shadow: 0px 8px 6px 0px gray;
+    padding: 8px;
+    border-style: none;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.nav:hover{
+    color: rgb(108, 254, 254);
+}

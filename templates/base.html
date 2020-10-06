@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en-US">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        
+        <script src="https://kit.fontawesome.com/cc0e1098f1.js" crossorigin="anonymous"></script>
+        
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap" rel="stylesheet">
+        
+        <title>Questionbox</title>
+    </head>
+
+    <body>
+   
+        <nav class="navigation">
+            <div>  </div>
+            <ul>
+                <li class="nav">Create Account <i class="fas fa-user-plus"></i></a></li>
+                <li class="nav">Login <i class="fas fa-sign-in-alt"></i></a></li>
+                {% if request.user.is_authenticated %}
+                <li class="nav">Logout <i class="fas fa-sign-out-alt"></i></a></li>
+                {% endif %}
+                <li class="nav">Go to Questions <i class="fas fa-question-circle"></i></a></li>
+                <!-- #search bar here too -->
+                <input required type="search" name="q" id="q">
+
+            </ul>
+            
+        </nav>
+        {% block content %}
+        {% endblock %}
+
+    <script src="{% static 'js/script.js' %}"></script>
+
+    </body>
+</html>
