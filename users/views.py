@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserCreationForm
 from .models import User
 
-# # Create your views here.
+# Create your views here.
 # def users_create(request):
 #     if request.method == "GET":
 #         form =  UserCreationForm()

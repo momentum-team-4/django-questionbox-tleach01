@@ -13,14 +13,21 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from os import name
+from questionbox.views import questions_list
 from django.contrib import admin
 from django.conf import settings
 from django.urls import include, path
 from django.views.generic import RedirectView, TemplateView
+from users import views as users_views
+from questionbox import views as questionbox_views
+from questionbox.models import Question, Answer
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', TemplateView.as_view(template_name="base.html"))
+    path('accounts/', include('registration.backends.simple.urls')),
+    path('', TemplateView.as_view(template_name="base.html")),
+    path('questionbox/questions_list', questionbox_views.questions_list, name="questions_list"),
 ]
 
 if settings.DEBUG:
