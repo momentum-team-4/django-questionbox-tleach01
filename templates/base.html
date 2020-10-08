@@ -18,13 +18,15 @@
         <nav class="navigation">
             <h2 class="webtitle"> Questionbox <i class="fas fa-box-open"></i></h2>
             <ul>
-                <li class="nav">Create Account <i class="fas fa-user-plus"></i></a></li>
-                <li class="nav">Login <i class="fas fa-sign-in-alt"></i></a></li>
-                {% if request.user.is_authenticated %}
-                <li class="nav">Logout <i class="fas fa-sign-out-alt"></i></a></li>
-                {% endif %}
-                <li class="nav"> <a href="{%url 'questions_list' %}">Go to Questions <i class="fas fa-question-circle"></i></a></li>
                 <input required type="search" name="q" id="q" placeholder="Search questions here">
+                <li class="nav"> <a href="{%url 'questions_list' %}">Go to Questions <i class="fas fa-question-circle"></i></a></li>
+                <li class="nav"> <a href="{% url 'users_create' %}"> Create Account <i class="fas fa-user-plus"></i></a></li>
+                <li class="nav"> <a href="{% url 'users_login' %}"> Login <i class="fas fa-sign-in-alt"></i></a></li>
+                {% if request.user.is_authenticated %}
+                <li class="nav"> <a href="{% url 'users_logout' %}"> Logout <i class="fas fa-sign-out-alt"></i></a></li>
+                {% endif %}
+                
+                
 
             </ul>
             

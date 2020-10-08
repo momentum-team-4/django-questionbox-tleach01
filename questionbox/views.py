@@ -22,10 +22,10 @@ def add_question(request):
         question = form.save(commit=False)
         question.user = request.user
         question.save()
-        return redirect(to="question_detail", pk=question.pk)
+        return redirect(to="question_list", pk=question.pk)
     form = QuestionForm()
 
-    return render(request, "templates/ask_question.html", {'form': form})
+    return render(request, "questions/add_question.html", {'form': form})
 
 @login_required
 def delete_question(request, pk):

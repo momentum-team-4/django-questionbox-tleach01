@@ -6,13 +6,15 @@ class QuestionForm(ModelForm):
         model = Question
         fields = [
             "title",
-            "body"
+            "body",
+            'author'
         ]
 
 class AnswerForm(ModelForm):
     class Meta:
         model = Answer
         fields = [
-            'body'
+            'body',
+            'author',
         ]
         
