@@ -3,6 +3,42 @@
 {% block content %}
 <h1>Question Detail</h1>
 
-<!-- #need all answers listed not just one, in order of most upvoted -->
+<div>
+    <h2 class="qTitle">{{question.title}}</h2>
+    <p class="qBody">{{question.body}}</p>
+    <p class="author">Asked by: {{question.author}}</p>
+    <p class="qDate">Asked on: {{question.date_added}}</p>
+
+</div>
+
+
+<div>
+    <h2>Answers</h2>
+  
+
+    <div>
+        {% for answer in answers %}
+    
+            <h2> </h2>
+            <p class="aBody">{{answer.body}}</p>
+            <p class="author">Answered by: {{answer.author}}</p>
+            <p class="aDate">Answered on: {{answer.date_added}}</p>
+            
+        {% endfor %}
+        
+        </div>
+    
+        <div>
+            <h2>Have a different answer? Add it here!</h2>
+    
+            <form action="{% url 'add_answer' question_pk=question_pk %}" method="POST">
+                {% csrf_token %}
+                {{ AnswerForm.as_p }}
+                <div>
+                    <button type="submit">Submit Answer</button>
+                </div>
+                
+            </form>
+        </div>
 
 {% endblock %}

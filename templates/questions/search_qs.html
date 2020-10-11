@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>Search Here</h2>
+
+<div>
+<form action="{% url 'search_qs' %}" method="GET">
+    <input type="search" name="qs" placeholder="Search questions here" value='{{query}}'>
+    <p>
+        <button type="submit">Search!</button>
+    </p>
+
+</form>
+</div>
+
+{% if questions is not None%}
+    {% for question in questions %}
+        <div>
+            <p class="qTitle"> {{question.title}}</p>
+            <a href="{% url 'question_detail' question.pk %}">View</a>
+        </div>
+    {% empty %}
+    <p> No questions match your search </p>
+    {% endfor %}
+
+{% endif %}
+{% endblock%}

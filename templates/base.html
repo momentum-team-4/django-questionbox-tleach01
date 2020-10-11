@@ -18,8 +18,9 @@
         <nav class="navigation">
             <h2 class="webtitle"> Questionbox <i class="fas fa-box-open"></i></h2>
             <ul>
-                <input required type="search" name="q" id="q" placeholder="Search questions here">
-                <li class="nav"> <a href="{%url 'questions_list' %}">Go to Questions <i class="fas fa-question-circle"></i></a></li>
+                <li class="nav"> Home </li>
+                <li class="nav"> <a href="{% url 'search_qs' %}">Search Questions</a></li>
+                <li class="nav"> <a href="{%url 'questions_list' %}">General Questions <i class="fas fa-question-circle"></i></a></li>
                 <li class="nav"> <a href="{% url 'users_create' %}"> Create Account <i class="fas fa-user-plus"></i></a></li>
                 <li class="nav"> <a href="{% url 'users_login' %}"> Login <i class="fas fa-sign-in-alt"></i></a></li>
                 {% if request.user.is_authenticated %}
