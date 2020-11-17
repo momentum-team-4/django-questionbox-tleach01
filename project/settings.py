@@ -37,6 +37,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,12 +45,14 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+
     # Third-party
     'debug_toolbar',
     'django_extensions',
 
     # Project-specific
     'users',
+    'questionbox',
 ]
 
 MIDDLEWARE = [
@@ -138,3 +141,9 @@ INTERNAL_IPS = [
     '127.0.0.1',
     # ...
 ]
+
+
+# Configure Django App for Heroku.
+import django_heroku
+django_heroku.settings(locals())
+del DATABASES['default']['OPTIONS']['sslmode']

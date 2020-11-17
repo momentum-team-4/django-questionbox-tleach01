@@ -1,0 +1,36 @@
+* {
+    font-family: 'Bree Serif', serif;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.navigation{
+    background-color: rgb(255, 255, 255);
+    border: rgb(14, 155, 73) 8px solid;
+    border-radius: 10px 10px;
+}
+
+.nav {
+    list-style-type: none;
+    display: inline-flex;
+    margin: 5px;
+    border-radius: 5px;
+    background-color: rgb(92, 232, 104) ;
+    color: rgb(3, 5, 7);
+    padding: 8px;
+    border-style: none;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.nav:hover{
+    color: rgb(108, 254, 254);
+}
+
+a:visited{
+    color: rgb(0, 0, 0);
+}
+
+body{
+    background-image: linear-gradient( to bottom right, aqua rgb(208, 255, 239));
+}

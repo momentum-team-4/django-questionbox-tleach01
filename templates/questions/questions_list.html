@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<h1>Questions List</h1>
+
+{% for question in questions %}
+<div><a href="{% url 'add_question' %}"> Add new question </a></div>
+
+<div>
+    <h2 class="qTitle">{{question.title}}</h2>
+    <p class=""> <a href="{% url 'question_detail' question.pk %}" >View Answers</a></p>
+    <p class="qBody">{{question.body}}</p>
+    <p class="author">Asked by: {{question.author}}</p>
+    <p class="qDate">Asked on: {{question.date_added}}</p>
+
+</div>
+
+
+{% endfor %}
+{% endblock %}
